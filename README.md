@@ -1,5 +1,5 @@
 # NT28B16-esphome
-Example esphome config for NT28B16 NTC/resistance 16 channel modbus module. Communicates over modbus RS485 with esphome node running on ESP32 and relays precessed data to Home Assistant instance.
+Example esphome config for NT28B16 NTC/resistance 16 channel modbus module. Communicates over modbus RS485 with esphome node running on ESP32 and relays processed data to Home Assistant instance.
 
 ## Hardware needed:
 - NT28B16 module
