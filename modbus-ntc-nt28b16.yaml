@@ -1,0 +1,279 @@
+esphome:
+  name: modbus-ntc-nt28b16
+  friendly_name: modbus-ntc-nt28b16
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+logger:
+
+
+api:
+
+
+ota:
+
+wifi:
+  ssid: yourssid
+  password: yourpassword
+
+
+
+uart:
+  id: mod_bus
+  tx_pin: 16
+  rx_pin: 17
+# By default the speed is 9600
+  baud_rate: 9600
+  stop_bits: 1
+
+modbus:
+
+  id: modbus1
+  
+
+modbus_controller:
+  - id: rs485_TA
+  # By default the address is 1
+    address: 1
+    modbus_id: modbus1
+    setup_priority: -10  
+    update_interval: 3s
+
+sensor:
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_01_temperature"
+    register_type: holding
+    address: 0
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_02_temperature"
+    register_type: holding
+    address: 1
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1   
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_03_temperature"
+    register_type: holding
+    address: 2
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_04_temperature"
+    register_type: holding
+    address: 3
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_05_temperature"
+    register_type: holding
+    address: 4
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_06_temperature"
+    register_type: holding
+    address: 5
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_07_temperature"
+    register_type: holding
+    address: 6
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+    
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_08_temperature"
+    register_type: holding
+    address: 7
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_09_temperature"
+    register_type: holding
+    address: 8
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_10_temperature"
+    register_type: holding
+    address: 9
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_11_temperature"
+    register_type: holding
+    address: 10
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_12_temperature"
+    register_type: holding
+    address: 11
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_13_temperature"
+    register_type: holding
+    address: 12
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_14_temperature"
+    register_type: holding
+    address: 13
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_15_temperature"
+    register_type: holding
+    address: 14
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_16_temperature"
+    register_type: holding
+    address: 15
+    unit_of_measurement: "°C"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.1
+    accuracy_decimals: 1 
+
+
+
+# Resistance readings - in case you are measuring soemthing different from temperature. Only one example shown
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_01_resistance"
+    register_type: holding
+    address: 32
+    unit_of_measurement: "kOhm"
+    value_type: U_WORD  
+    filters:
+    - multiply: 0.01
+    accuracy_decimals: 2
+
+
+
+
+# Temperature calibration. 1digit = 0.1°C. Only one exaxmple shown
+number:
+  - platform: modbus_controller
+    modbus_controller_id: rs485_TA
+    name: "ntc_01_correction_temp_slider"   
+    register_type: holding
+    address: 64
+    value_type: U_WORD      
+    min_value: -10
+    max_value: 10
+    mode: box
+
+
+# "one time use" modbus address and baudrate changer. Use with caution as after a change you will be disconnected from the device. Uncomment only when you are ready to use it
+# See documentation to see what those numbers mean
+
+
+#address changer
+
+#  - platform: modbus_controller
+#    modbus_controller_id: rs485
+#    name: "address"   
+#    register_type: holding
+#    address: 253
+#    value_type: U_WORD      
+#    min_value: 100
+#    max_value: 102
+#    mode: box    
+
+
+# Baudrate changer - power cycle after a change and change the baudrate in your uart settings at the top
+
+#  - platform: modbus_controller
+#    modbus_controller_id: rs485
+#    name: "baudrate"   
+#    register_type: holding
+#    address: 254
+#    value_type: U_WORD      
+#    min_value: 0
+#    max_value: 8
+#    mode: box  
